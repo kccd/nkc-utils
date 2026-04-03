@@ -1,5 +1,6 @@
 {
   "name": "nkc-utils",
+  "version": "0.0.2",
   "module": "index.ts",
   "type": "module",
   "private": true,
@@ -9,13 +10,14 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "bun run build",
+    "upload": "git add . && git commit -m \"update\" && git push"
   },
   "exports": {
     ".": {
       "node": {
         "types": "./dist/node/node.d.ts",
-        "import": "./dist/node/node.mjs",
+        "import": "./dist/node/node.js",
         "require": "./dist/node/node.cjs"
       },
       "browser": {
@@ -32,9 +34,7 @@
     "@biomejs/biome": "^2.4.10",
     "@types/bun": "latest",
     "@types/node": "^25.5.0",
-    "tsup": "^8.5.1"
-  },
-  "peerDependencies": {
-    "typescript": "^6.0.2"
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
   }
 }
