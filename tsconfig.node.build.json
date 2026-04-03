@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "types": ["node"],
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["src/node.ts", "src/index.ts"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "nkc-utils",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "bun run build"
+  },
+  "exports": {
+    ".": {
+      "node": {
+        "types": "./dist/node/node.d.ts",
+        "import": "./dist/node/node.mjs",
+        "require": "./dist/node/node.cjs"
+      },
+      "browser": {
+        "types": "./dist/browser/browser.d.ts",
+        "import": "./dist/browser/browser.js"
+      },
+      "default": {
+        "types": "./dist/browser/browser.d.ts",
+        "import": "./dist/browser/browser.js"
+      }
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.10",
+    "@types/bun": "latest",
+    "@types/node": "^25.5.0",
+    "tsup": "^8.5.1"
+  },
+  "peerDependencies": {
+    "typescript": "^6.0.2"
+  }
+}

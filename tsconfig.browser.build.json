@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": [],
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["src/browser.ts", "src/index.ts"],
+  "exclude": ["node_modules", "dist"]
+}
